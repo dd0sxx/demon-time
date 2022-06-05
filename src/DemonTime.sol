@@ -30,8 +30,9 @@ contract DemonTime is ERC721A {
         _mint(L, 500);
     }
 
-    function mint() external {
-        require(_numberMinted(msg.sender) == 0);
+    function summonDemon () external {
+        require(_nextTokenId() < 5000, "MAX_SUPPLY")
+        require(_numberMinted(msg.sender) == 0, "AlREADY_MINTED");
         _mint(msg.sender, 1);
     }
 
@@ -64,6 +65,11 @@ contract DemonTime is ERC721A {
         uint balance =  address(this).balance;
         require(balance > 0);
         L.call{value: balance}("");
+    }
+
+    function setL (address newL) external {
+        require(msg.sender == L);
+        L = newL;
     }
 
     receive () external payable {
