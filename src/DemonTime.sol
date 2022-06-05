@@ -32,7 +32,7 @@ contract DemonTime is ERC721A {
 
     function summonDemon () external {
         require(_nextTokenId() < 5000, "MAX_SUPPLY");
-        // require(_numberMinted(msg.sender) == 0, "AlREADY_MINTED");
+        require(_numberMinted(msg.sender) == 0, "AlREADY_MINTED");
         _mint(msg.sender, 1);
     }
 

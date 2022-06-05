@@ -14,8 +14,9 @@ contract ContractTest is Test {
         assertEq(L, 0x8b5B9497e096ee6FfD6041D1Db37a2ac2b41AB0d);
     }
 
-    function testMaxSup() public {
+    function testMaxSupOrOnePerPerson() public {
         // will fail unless you comment out line 35 in DemonTime.sol
+        // if not commented out, test makes sure only one per person
         for (uint i; i < 4500; i++) {
             DT.summonDemon();
         }
@@ -24,10 +25,9 @@ contract ContractTest is Test {
     }
 
     function testFailMaxSup() public {
-        // will fail for wrogn reasons unless you comment out line 35 in DemonTime.sol
+        // will fail/pass for wrong reasons unless you comment out line 35 in DemonTime.sol
         for (uint i; i < 4501; i++) {
             DT.summonDemon();
         }
-
     }
 }
