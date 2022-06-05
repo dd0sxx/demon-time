@@ -11,7 +11,7 @@ contract ContractTest is Test {
 
     function testInitSupply() public {
         address L = DT.ownerOf(499);
-        assertEq(L, 0x8b5B9497e096ee6FfD6041D1Db37a2ac2b41AB0d);
+        assertEq(L, 0x0c40BAa31D20574C8930a6e8f59fa2e11dFE17F2);
     }
 
     function testMaxSupOrOnePerPerson() public {
@@ -29,5 +29,9 @@ contract ContractTest is Test {
         for (uint i; i < 4501; i++) {
             DT.summonDemon();
         }
+    }
+
+    function testDeploymentGas() public {
+        DemonTime DT = new DemonTime();
     }
 }

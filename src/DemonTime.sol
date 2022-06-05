@@ -23,8 +23,8 @@ contract DemonTime is ERC721A {
 
     using Strings for uint256;
 
-    address private L = 0x8b5B9497e096ee6FfD6041D1Db37a2ac2b41AB0d;
-    string _baseTokenURI = "";
+    address private L = 0x0c40BAa31D20574C8930a6e8f59fa2e11dFE17F2;
+    string _baseTokenURI = "ipfs://QmaS2Xqvqu3gcUMRjguvibVMhEX6wByAPeQcct4vcjEYaK/";
 
     constructor () ERC721A ("Demon Time", "DEMON_TIME") {
         _mint(L, 500);
@@ -57,7 +57,7 @@ contract DemonTime is ERC721A {
     ) {
         return (
             L, 
-            _salePrice * 5 / 100 // 6% royalty
+            _salePrice * 5 / 100 // 5% royalty
         );
     }
 
