@@ -27,7 +27,7 @@ contract DemonTime is ERC721A {
     string _baseTokenURI = "";
 
     constructor () ERC721A ("Demon Time", "DEMON_TIME") {
-
+        _mint(L, 500);
     }
 
     function mint() external {
